@@ -1,0 +1,22 @@
+set FLASK_APP=market.py
+set FLASK_DEBUG=1
+python -m flask run
+
+flask-sqlalchemy
+
+db.create_all()
+from market import Item
+item1=
+
+from market.models import db
+
+item1 = Item.query.filter_by(name='IPhong').first()
+
+db.session.rollback()
+item1.owner = User.query.filter_by(username='HK').first().id
+db.session.add(item1) 
+db.session.commit() 
+
+pip install flask-wtf wtforms
+pip install flask_bcrypt
+pip install flask_login
